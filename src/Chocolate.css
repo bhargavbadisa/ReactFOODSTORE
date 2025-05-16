@@ -1,0 +1,167 @@
+.chocolates-page {
+  padding: 20px;
+  background-color: #fdf6f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chocolates-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6b3e26;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #f5e5da;
+  padding: 20px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.chocolates-list {
+  display: flex;
+  justify-content: center;
+}
+
+.chocolates-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.chocolate-item {
+  width: 250px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chocolate-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.chocolate-item span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #5a2d0c;
+}
+
+.chocolate-item button {
+  padding: 10px 15px;
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chocolate-item button:hover {
+  background-color: #4e2b0f;
+}
+
+.chocolates-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  margin-top: 40px;
+}
+
+.chocolates-footer p {
+  margin: 0;
+}
+.chocolates-page {
+  padding: 20px;
+  text-align: center;
+}
+
+.chocolates-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.chocolates-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.chocolate-item {
+  list-style-type: none;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination button:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styling for pagination info */
+.pagination-info {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.chocolates-footer {
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+.product-card {
+  width: 220px; /* Fixed width for the product card */
+  height: 350px; /* Fixed height for the product card */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin: 10px; /* Optional for spacing between cards */
+}

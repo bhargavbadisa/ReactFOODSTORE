@@ -1,0 +1,168 @@
+.cart-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cart-list {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.cart-header,
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px 150px 120px 120px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-header {
+  font-weight: bold;
+  background-color: #f7f7f7;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.item-name,
+.item-price,
+.item-actions {
+  padding: 5px;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity-box button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.btn-remove {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background-color: darkred;
+}
+
+.summary-section {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+.summary-section h3, .summary-section h4 {
+  margin: 10px 0;
+}
+
+.discount-buttons button {
+  margin-right: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.discount-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.coupon-section {
+  margin: 10px 0;
+}
+
+.coupon-section input {
+  padding: 8px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.email-section input {
+  padding: 8px;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.payment-method {
+  margin-top: 20px;
+}
+
+.payment-method button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.payment-method button:hover {
+  background-color: #218838;
+}
+
+.qr-section,
+.card-section {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px dashed #ccc;
+  text-align: center;
+}
+
+.card-section input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 250px;
+}
+
+.confirm-payment-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-payment-btn:hover {
+  background-color: #e0a800;
+}
+
+.thank-you-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: green;
+  margin-top: 50px;
+}

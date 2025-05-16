@@ -1,0 +1,143 @@
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+
+
+//Create the Slice
+const ProductsSclice = createSlice({
+  name: 'products',
+  initialState: {
+    Veg: [
+      { name: 'Tomato', price: 100.00, image: '/VegImages/tomato.webp' },
+      { name: 'Potato', price: 40.00, image: '/VegImages/potato.jpeg' },
+      { name: 'Onion', price: 60.00, image: '/VegImages/onion.avif' },
+      { name: 'Carrot', price: 80.00, image: '/VegImages/carrot.avif' },
+      { name: 'Broccoli', price: 120.00, image: '/VegImages/Broccoli.avif' },
+      { name: 'Cabbage', price: 45.00, image: '/VegImages/Cabbage.jpeg' },
+      { name: 'Cauliflower', price: 70.00, image: '/VegImages/Cauliflower.jpeg' },
+      { name: 'Bell Pepper', price: 90.00, image: '/VegImages/Bell Pepper.jpeg' },
+      { name: 'Brinjal', price: 75.00, image: '/VegImages/Brinjal.jpeg' },
+      { name: 'Beetroot', price: 55.00, image: '/VegImages/Beetroot.jpeg' },
+      { name: 'Chili', price: 50.00, image: '/VegImages/Chili.jpeg' },
+      { name: 'Mushrooms', price: 150.00, image: '/VegImages/Mushrooms.jpeg' },
+
+      { name: 'Pumpkin', price: 110.00, image: '/VegImages/pumpkin.jpg' },
+      { name: 'Zucchini', price: 65.00, image: '/VegImages/zucchini.jpg' },
+      { name: 'Sweet Corn', price: 95.00, image: '/VegImages/sweet_corn.jpg' },
+      { name: 'Green Beans', price: 85.00, image: '/VegImages/green_beans.jpg' },
+      { name: 'Radish', price: 40.00, image: '/VegImages/radish.jpg' },
+      { name: 'Leeks', price: 60.00, image: '/VegImages/leeks.jpg' },
+      { name: 'Asparagus', price: 130.00, image: '/VegImages/asparagus.jpg' },
+      { name: 'Artichoke', price: 120.00, image: '/VegImages/artichoke.jpg' },
+      { name: 'Fennel', price: 70.00, image: '/VegImages/fennel.jpg' },
+      { name: 'Sweet Potato', price: 90.00, image: '/VegImages/sweet_potato.jpg' },
+      { name: 'Bok Choy', price: 100.00, image: '/VegImages/bok_choy.jpg' },
+    ],
+
+    NonVeg: [
+      { name: 'Chicken', price: 220.00, image: '/NonVegImages/Chicken.jpeg' },
+      { name: 'Mutton', price: 600.00, image: '/NonVegImages/Mutton.jpeg' },
+      { name: 'Fish', price: 300.00, image: '/NonVegImages/Fish.jpg' },
+      { name: 'Prawns', price: 450.00, image: '/NonVegImages/Prawns.jpeg' },
+      { name: 'Crab', price: 500.00, image: '/NonVegImages/Crab.jpeg' },
+      { name: 'Beef', price: 350.00, image: '/NonVegImages/Beef.jpg' },
+      { name: 'Turkey', price: 380.00, image: '/NonVegImages/Turkey.jpg' },
+      { name: 'Squid', price: 420.00, image: '/NonVegImages/Squid.JPG' },
+      { name: 'Venison', price: 650.00, image: '/NonVegImages/Venison.jpg' },
+      { name: 'Goat Meat', price: 320.00, image: '/NonVegImages/Goat Meat.jpg' },
+      { name: 'Salmon Fillet', price: 750.00, image: '/NonVegImages/Salmon Fillet.jpeg' },
+      { name: 'Tuna Steak', price: 680.00, image: '/NonVegImages/Tuna Steak.jpg' },
+      { name: 'Rabbit', price: 500.00, image: '/NonVegImages/Rabbit.jpg' },
+      { name: 'Chicken Thighs', price: 220.00, image: '/NonVegImages/Chicken Thighs.jpg' },
+      { name: 'Chicken Wings', price: 180.00, image: '/NonVegImages/Chicken Wings.jpg' },
+      { name: 'Ostrich', price: 700.00, image: '/NonVegImages/Ostrich.jpeg' },
+
+    ],
+    Milk: [
+
+      { name: 'milk', price: 60.00, image: '/MilkImages/milk.jpeg' },
+      { name: 'curd', price: 50.00, image: '/MilkImages/curd.jpeg' },
+      { name: 'butter', price: 90.00, image: '/MilkImages/butter.jpeg' },
+      { name: 'cheese', price: 120.00, image: '/MilkImages/cheese copy.jpeg' },
+      { name: 'paneer', price: 100.00, image: '/MilkImages/paneer.jpeg' },
+      { name: 'ghee', price: 500.00, image: '/MilkImages/ghee copy.jpeg' },
+      { name: 'cream', price: 110.00, image: '/MilkImages/cream copy.jpeg' },
+      { name: 'flavored milk', price: 70.00, image: '/MilkImages/flavored milk.jpeg' },
+      { name: 'yogurt', price: 55.00, image: '/MilkImages/yogurt.jpg' },
+      { name: 'milk powder', price: 400.00, image: '/MilkImages/milk powder.jpeg' }
+
+    ],
+    Chocolates: [
+  { name: 'milk chocolate', price: 150.00, image: '/ChocolateImages/milk chocolate.jpg' },
+{ name: 'dark chocolate', price: 70.00, image: '/ChocolateImages/dark chocolate.jpeg' },
+{ name: 'white chocolate', price: 60.00, image: '/ChocolateImages/white chocolate.jpg' },
+{ name: 'hazelnut choco', price: 90.00, image: '/ChocolateImages/hazelnut chocolate.jpg' },
+{ name: 'almond chocolate', price: 85.00, image: '/ChocolateImages/almond chocolate.webp' },
+{ name: 'mint chocolate', price: 65.00, image: '/ChocolateImages/mint chocolate.jpg' },
+{ name: 'orange chocolate', price: 75.00, image: '/ChocolateImages/orange chocolate.jpg' },
+{ name: 'caramel chocolate', price: 80.00, image: '/ChocolateImages/caramel chocolate.jpg' },
+{ name: 'truffle chocolate', price: 100.00, image: '/ChocolateImages/truffle chocolate.jpg' },
+{ name: 'fruit & nut chocolate', price: 95.00, image: '/ChocolateImages/fruit & nut chocolate.jpg' }
+
+    ]
+  },
+  reducers: {}
+});
+const CartSlice = createSlice({
+  name: 'cart',
+  initialState: [],
+  reducers: {
+    AddToCart: (state, action) => {
+      const item = state.find(item => item.name === action.payload.name);
+      if (item) {
+        item.quantity += 1;
+      } else {
+        state.push({ ...action.payload, quantity: 1 });
+      }
+    },
+    IncCart: (state, action) => {
+      const item = state.find(item => item.name === action.payload.name);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+    DecCart: (state, action) => {
+      const item = state.find(item => item.name === action.payload.name);
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+      } else if (item && item.quantity === 1) {
+        // If quantity is 1, remove the item from cart
+        return state.filter(cartItem => cartItem.name !== item.name);
+      }
+    },
+    RemoveCart: (state, action) => {
+      return state.filter(item => item.name !== action.payload.name);
+    },
+    ClearCart:()=>[]
+  }
+});
+
+// Export action
+export const { AddToCart, IncCart, DecCart, RemoveCart,ClearCart } = CartSlice.actions;
+//CREATE orderSlice
+let orderSlice = createSlice({
+  name: 'orders',
+  initialState: [],
+  reducers: {
+    OrderDetails: (state, actions) => {
+      let orderObjects = actions.payload;
+      state.push(orderObjects);
+    }
+  }
+})
+
+//export
+export let { OrderDetails } = orderSlice.actions;
+
+// Configure store
+const Store = configureStore({
+  reducer: {
+    products: ProductsSclice.reducer,
+    cart: CartSlice.reducer,
+    orders: orderSlice.reducer,
+  }
+});
+export default Store;

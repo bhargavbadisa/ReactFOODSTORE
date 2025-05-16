@@ -1,0 +1,103 @@
+/* Modern Orders Component Styling */
+
+.orders-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.orders-container h2 {
+  text-align: center;
+  color: crimson;
+  margin-bottom: 30px;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to bottom right, #f2f2f2, #e6e6e6);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.order-id,
+.order-datetime,
+.order-amount {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.order-id i,
+.order-datetime i,
+.order-amount i {
+  margin-right: 10px;
+  color: #e63946;
+}
+
+.order-items {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.order-item {
+  padding: 8px 0;
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.order-item i {
+  color: #2a9d8f;
+  margin-right: 8px;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .order-card {
+    padding: 18px;
+  }
+
+  .order-id,
+  .order-datetime,
+  .order-amount,
+  .order-item {
+    font-size: 15px;
+  }
+
+  .orders-container h2 {
+    font-size: 22px;
+  }
+}
