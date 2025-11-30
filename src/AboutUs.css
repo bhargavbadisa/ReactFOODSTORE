@@ -1,7 +1,7 @@
 .about-container {
   max-width: 900px;
   padding: 20px;
-  background: white; /* changed */
+  background: white;
   border-radius: 20px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.8s ease;
