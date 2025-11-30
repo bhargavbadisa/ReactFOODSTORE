@@ -35,7 +35,7 @@ function AboutUs() {
           <li className="team-member">Bhargav</li>
           <li className="team-member">Sriram</li>
           <li className="team-member">Sandeep</li>
-          <li className="team-member">Venky</li>
+          <li className="team-member">Nikhil</li>
         </ul>
 
       </div>
