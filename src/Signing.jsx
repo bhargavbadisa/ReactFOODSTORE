@@ -3,9 +3,9 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logInUser } from './store';
-import './SignIn.css'; // 👈 Import CSS file
+import './Signing.css'; // 👈 Import CSS file
 
-function SignIn() {
+function Signing() {
   let { register, handleSubmit } = useForm();
   let dispatch = useDispatch();
   let navigate = useNavigate();
