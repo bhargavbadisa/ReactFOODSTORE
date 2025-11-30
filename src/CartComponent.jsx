@@ -199,8 +199,13 @@ const templateParams = {
             {paymentMethod === 'qr' && !paymentSuccessful && (
               <div className="qr-section">
                 <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
+<<<<<<< HEAD
                 <QRCode value={`upi://pay?pa=6281022488-2@ibl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
                 <p>UPI ID:6281022488-2@ibl</p>
+=======
+                <QRCode value={`upi://pay?pa=bhargavbadisha@ybl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
+                <p>UPI ID: 6281022488-2@ibl</p>
+>>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
                 <button onClick={handlePaymentSuccess} className="confirm-payment-btn">
                   ✅ I've Completed Payment
                 </button>

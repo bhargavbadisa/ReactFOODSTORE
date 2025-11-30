@@ -1,4 +1,5 @@
 .about-container {
+<<<<<<< HEAD
     max-width: 900px;
     margin: 40px 30px;
     padding: 40px;
@@ -27,6 +28,34 @@
     margin-top: 30px;
     padding: 20px;
     background: #e8f5e9;
+=======
+  max-width: 900px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+  .about-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #f0e913;
+    margin-bottom: 20px;
+  }
+  
+  .about-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #adaaaa;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease;
+  }
+  
+  .about-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgb(16, 130, 145);
+>>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -37,13 +66,21 @@
   }
   
   .about-section h2 {
+<<<<<<< HEAD
     color: #1b5e20;
+=======
+    color: #1e1c18;
+>>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
   }
   
   .about-section p,
   .about-section ul {
     font-size: 1rem;
+<<<<<<< HEAD
     color: #333;
+=======
+    color: #080808;
+>>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
   }
   
   .about-section ul {
@@ -101,4 +138,40 @@
       font-size: 1rem;
     }
   }
+<<<<<<< HEAD
   
+=======
+.team-section {
+  margin-top: 2rem;
+  background-color: rgb(16, 130, 145);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.team-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  gap: 1.5rem;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.team-member {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  padding: 0.4rem 1rem;
+  transition: color 0.3s ease;
+  border-radius: 8px;
+}
+
+.team-member:hover {
+  color: #27ae60;
+  background-color: #e8f6ef;
+  cursor: default;
+}
+>>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
