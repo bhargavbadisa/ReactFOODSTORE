@@ -1,22 +1,46 @@
-import React from 'react'
-import './Signing.css'
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logInUser } from './store';
+import './SignIn.css'; // 👈 Import CSS file
 
-function Signing() {
+function SignIn() {
+  let { register, handleSubmit } = useForm();
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+
+  let myFunc = (data) => {
+    dispatch(logInUser(data));
+    navigate("/Home");
+  }
+
   return (
-    <>
-    <center>
-      <div>
-      <h1>This is Signing Page</h1>
-      <h2>Login Form:</h2>
-    
-     <h2>UserName :<input type="text" placeholder="Username" required /></h2>
-     <h2>Password :<input type="password" placeholder="Password" required /></h2>
-      <button type="submit">Login</button>
-
-    <p>Don't have an account? <a href="#">Sign up</a></p></div>
-    </center>
-    </>
-  )
+    <div className="signin-container">
+      <h2 className="signin-title">User Sign In</h2>
+      <form className="signin-form" onSubmit={handleSubmit(myFunc)}>
+        <input
+          className="signin-input"
+          type="text"
+          placeholder="Username"
+          {...register("username")}
+        />
+        <input
+          className="signin-input"
+          type="password"
+          placeholder="Password"
+          {...register("password")}
+        />
+        <button className="signin-button" type="submit">Sign In</button>
+      </form>
+      <p className="signin-footer">
+        New user?{" "}
+        <Link className="signup-link" to="/SignUp">
+          Sign Up
+        </Link>
+      </p>
+    </div>
+  );
 }
 
-export default Signing
+export default SignIn;
