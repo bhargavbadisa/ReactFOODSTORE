@@ -1,13 +1,11 @@
 .about-container {
-    max-width: 900px;
-    
-    padding: 20px;
-    background: rgb(3, 55, 73);
-    border-radius: 20px;
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.8s ease;
-  }
-  
+  max-width: 900px;
+  padding: 20px;
+  background: white; /* changed */
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
   .about-title {
     text-align: center;
     font-size: 2.5rem;
