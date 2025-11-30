@@ -1,106 +1,131 @@
-/* Reset default spacing */
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-}
-/* Nav list styling */
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 1px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list li {
-  margin: 0;
-}
-
-.nav-list a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 6px 10px;
-  border-radius: 5px;
-}
-
-.nav-list a:hover {
-  background-color: #0056b3;
-}
-
-/* Brand/logo */
-.brand-name {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fa0c0c; /* White text */
-}
-/* Reset default spacing */
-body, html, #root {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-}
-
-/* Navbar fixed at top */
+/* Navbar container */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
-  z-index: 1000;
+  background-color: #092120;
   display: flex;
-  justify-content: space-between; /* Logo left, nav right */
   align-items: center;
-  background-color: #007bff;
-  padding: 15px 25px;
+  padding: 10px 15px; /* Reduced padding */
   box-sizing: border-box;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
-.logo {
+/* Left (brand/logo) */
+.navbar-left {
+  margin-right: 10px; /* Decreased spacing */
+}
+
+.navbar-left .brand {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
+  color: rgb(230, 7, 7);
+  white-space: nowrap;
+  cursor: pointer;
 }
 
-/* Navigation list */
-.nav-list {
-  list-style: none;
+/* Right side */
+.navbar-right {
   display: flex;
-  gap: 1px;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  gap: 10px; /* Reduced spacing between elements */
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-left: auto; /* Pushes navbar-right to the right */
 }
 
-.nav-list li {
-  margin: 0;
+/* Nav Links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
 }
 
-.nav-list a {
+.nav-links a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 6px 12px;
-  border-radius: 5px;
+  font-size: 1rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  background-color: #e30b7e;
+}
+
+/* Hamburger (mobile) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #2de8eb;
+    flex-direction: column;
+    width: 200px;
+    border-radius: 6px;
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-right {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+}
+
+/* Auth section */
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Reduced gap */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.welcome-text {
+  font-weight: 500;
+  color: #f0e913;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.nav-list a:hover {
-  background-color: #0056b3;
-}
-
-/* Padding on main content so it's not hidden under navbar */
-main {
-  padding-top: 70px; /* Adjust if navbar height changes */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-#root {
-  width: 250%;
-  max-width: 15000px; /* or any fixed width */
-  padding: 20px;
+.logout-button:hover {
+  background-color: #c0392b;
 }

@@ -6,7 +6,26 @@ function Home() {
   return (
     <>
       <h1>This is Home Page</h1>
+      
+       {/* Features */}
+      <div className="features-container">
+        <div className="feature-card">
+          <h3>⚡ Quick Shipping</h3>
+          <p>Get your order delivered on the same day in key metro areas.</p>
 
+        </div>
+        <div className="feature-card">
+          <h3>🛍️ Wide Variety</h3>
+          <p>Explore thousands of items in diverse categories.</p>
+
+        </div>
+        <div className="feature-card">
+          <h3>🔒 Safe Checkout</h3>
+          <p>Choose from various payment methods, all protected by SSL encryption.</p>
+
+        </div>
+      </div>
+                  <h1>FOOD STORE PRODUCTS</h1>
       <div className="card-container">
         <section id="veg">
           <Link to="/veg" className="card-link">
@@ -48,11 +67,18 @@ function Home() {
           </Link>
         </section>
       </div>
-
-      <footer>
-        <p>&copy; 2025 Food Store. All Rights Reserved.</p>
+              {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <p>&copy; {new Date().getFullYear()} <strong>Sam-store</strong>. All rights reserved.</p>
+          <p>
+            <a href="/terms" className="footer-link">Terms of Service</a> |
+            <a href="/privacy" className="footer-link"> Privacy Policy</a>
+          </p>
+          <p>Designed & Developed by Simhadri Badisha</p>
+        </div>
       </footer>
-    </>
+</>
   );
 }
 

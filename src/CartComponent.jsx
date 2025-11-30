@@ -29,13 +29,13 @@ function CartComponent() {
     setCouponCode(codeValue);
 
     switch (codeValue) {
-      case 'NANI10':
+      case 'SAM123':
         setCouponDiscountPercentage(10);
         break;
-      case 'NANI20':
+      case 'SAM234':
         setCouponDiscountPercentage(20);
         break;
-      case 'NANI30':
+      case 'SAM143':
         setCouponDiscountPercentage(30);
         break;
       default:
@@ -199,8 +199,8 @@ const templateParams = {
             {paymentMethod === 'qr' && !paymentSuccessful && (
               <div className="qr-section">
                 <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
-                <QRCode value={`upi://pay?pa=kotipallibabu@ybl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
-                <p>UPI ID: kotipallibabu@ybl</p>
+                <QRCode value={`upi://pay?pa=6281022488-2@ibl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
+                <p>UPI ID:6281022488-2@ibl</p>
                 <button onClick={handlePaymentSuccess} className="confirm-payment-btn">
                   ✅ I've Completed Payment
                 </button>

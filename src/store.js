@@ -1,11 +1,14 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
+// localStorage getting and storing in localStorageCart
+const savedCart = localStorage.getItem("cart");
+const localStorageCart = savedCart ? JSON.parse(savedCart) : [];
 
-//Create the Slice
-const ProductsSclice = createSlice({
-  name: 'products',
-  initialState: {
-    Veg: [
+//create the Product Slice
+const productSlice = createSlice({
+    name: 'products',
+    initialState: {
+       Veg: [
       { name: 'Tomato', price: 100.00, image: '/VegImages/tomato.webp' },
       { name: 'Potato', price: 40.00, image: '/VegImages/potato.jpeg' },
       { name: 'Onion', price: 60.00, image: '/VegImages/onion.avif' },
@@ -18,7 +21,6 @@ const ProductsSclice = createSlice({
       { name: 'Beetroot', price: 55.00, image: '/VegImages/Beetroot.jpeg' },
       { name: 'Chili', price: 50.00, image: '/VegImages/Chili.jpeg' },
       { name: 'Mushrooms', price: 150.00, image: '/VegImages/Mushrooms.jpeg' },
-
       { name: 'Pumpkin', price: 110.00, image: '/VegImages/pumpkin.jpg' },
       { name: 'Zucchini', price: 65.00, image: '/VegImages/zucchini.jpg' },
       { name: 'Sweet Corn', price: 95.00, image: '/VegImages/sweet_corn.jpg' },
@@ -29,9 +31,8 @@ const ProductsSclice = createSlice({
       { name: 'Artichoke', price: 120.00, image: '/VegImages/artichoke.jpg' },
       { name: 'Fennel', price: 70.00, image: '/VegImages/fennel.jpg' },
       { name: 'Sweet Potato', price: 90.00, image: '/VegImages/sweet_potato.jpg' },
-      { name: 'Bok Choy', price: 100.00, image: '/VegImages/bok_choy.jpg' },
+      { name: 'Bok Choy', price: 100.00, image: '/VegImages/bok_choy.jpg' }
     ],
-
     NonVeg: [
       { name: 'Chicken', price: 220.00, image: '/NonVegImages/Chicken.jpeg' },
       { name: 'Mutton', price: 600.00, image: '/NonVegImages/Mutton.jpeg' },
@@ -48,11 +49,9 @@ const ProductsSclice = createSlice({
       { name: 'Rabbit', price: 500.00, image: '/NonVegImages/Rabbit.jpg' },
       { name: 'Chicken Thighs', price: 220.00, image: '/NonVegImages/Chicken Thighs.jpg' },
       { name: 'Chicken Wings', price: 180.00, image: '/NonVegImages/Chicken Wings.jpg' },
-      { name: 'Ostrich', price: 700.00, image: '/NonVegImages/Ostrich.jpeg' },
-
+      { name: 'Ostrich', price: 700.00, image: '/NonVegImages/Ostrich.jpeg' }
     ],
     Milk: [
-
       { name: 'milk', price: 60.00, image: '/MilkImages/milk.jpeg' },
       { name: 'curd', price: 50.00, image: '/MilkImages/curd.jpeg' },
       { name: 'butter', price: 90.00, image: '/MilkImages/butter.jpeg' },
@@ -63,81 +62,139 @@ const ProductsSclice = createSlice({
       { name: 'flavored milk', price: 70.00, image: '/MilkImages/flavored milk.jpeg' },
       { name: 'yogurt', price: 55.00, image: '/MilkImages/yogurt.jpg' },
       { name: 'milk powder', price: 400.00, image: '/MilkImages/milk powder.jpeg' }
-
     ],
     Chocolates: [
-  { name: 'milk chocolate', price: 150.00, image: '/ChocolateImages/milk chocolate.jpg' },
-{ name: 'dark chocolate', price: 70.00, image: '/ChocolateImages/dark chocolate.jpeg' },
-{ name: 'white chocolate', price: 60.00, image: '/ChocolateImages/white chocolate.jpg' },
-{ name: 'hazelnut choco', price: 90.00, image: '/ChocolateImages/hazelnut chocolate.jpg' },
-{ name: 'almond chocolate', price: 85.00, image: '/ChocolateImages/almond chocolate.webp' },
-{ name: 'mint chocolate', price: 65.00, image: '/ChocolateImages/mint chocolate.jpg' },
-{ name: 'orange chocolate', price: 75.00, image: '/ChocolateImages/orange chocolate.jpg' },
-{ name: 'caramel chocolate', price: 80.00, image: '/ChocolateImages/caramel chocolate.jpg' },
-{ name: 'truffle chocolate', price: 100.00, image: '/ChocolateImages/truffle chocolate.jpg' },
-{ name: 'fruit & nut chocolate', price: 95.00, image: '/ChocolateImages/fruit & nut chocolate.jpg' }
-
+      { name: 'milk chocolate', price: 150.00, image: '/ChocolateImages/milk chocolate.jpg' },
+      { name: 'dark chocolate', price: 70.00, image: '/ChocolateImages/dark chocolate.jpeg' },
+      { name: 'white chocolate', price: 60.00, image: '/ChocolateImages/white chocolate.jpg' },
+      { name: 'hazelnut choco', price: 90.00, image: '/ChocolateImages/hazelnut chocolate.jpg' },
+      { name: 'almond chocolate', price: 85.00, image: '/ChocolateImages/almond chocolate.webp' },
+      { name: 'mint chocolate', price: 65.00, image: '/ChocolateImages/mint chocolate.jpg' },
+      { name: 'orange chocolate', price: 75.00, image: '/ChocolateImages/orange chocolate.jpg' },
+      { name: 'caramel chocolate', price: 80.00, image: '/ChocolateImages/caramel chocolate.jpg' },
+      { name: 'truffle chocolate', price: 100.00, image: '/ChocolateImages/truffle chocolate.jpg' },
+      { name: 'fruit & nut chocolate', price: 95.00, image: '/ChocolateImages/fruit & nut chocolate.jpg' }
     ]
-  },
-  reducers: {}
-});
-const CartSlice = createSlice({
-  name: 'cart',
-  initialState: [],
-  reducers: {
-    AddToCart: (state, action) => {
-      const item = state.find(item => item.name === action.payload.name);
-      if (item) {
-        item.quantity += 1;
-      } else {
-        state.push({ ...action.payload, quantity: 1 });
-      }
-    },
-    IncCart: (state, action) => {
-      const item = state.find(item => item.name === action.payload.name);
-      if (item) {
-        item.quantity += 1;
-      }
-    },
-    DecCart: (state, action) => {
-      const item = state.find(item => item.name === action.payload.name);
-      if (item && item.quantity > 1) {
-        item.quantity -= 1;
-      } else if (item && item.quantity === 1) {
-        // If quantity is 1, remove the item from cart
-        return state.filter(cartItem => cartItem.name !== item.name);
-      }
-    },
-    RemoveCart: (state, action) => {
-      return state.filter(item => item.name !== action.payload.name);
-    },
-    ClearCart:()=>[]
-  }
+  }, 
+    reducers: {}
 });
 
-// Export action
-export const { AddToCart, IncCart, DecCart, RemoveCart,ClearCart } = CartSlice.actions;
-//CREATE orderSlice
-let orderSlice = createSlice({
-  name: 'orders',
-  initialState: [],
-  reducers: {
-    OrderDetails: (state, actions) => {
-      let orderObjects = actions.payload;
-      state.push(orderObjects);
+//create the Cart Slice
+let cartSlice = createSlice({
+    name: 'cart',
+    initialState: localStorageCart,
+    reducers: {
+        AddToCart: (state, inputItem) => {
+            const item = state.find(item => item.name === inputItem.payload.name)
+            if (item) {
+                item.quantity += 1;
+            }
+            else {
+                state.push({ ...inputItem.payload, quantity: 1 });
+            }
+        },
+        IncCart: (state, inputItem) => {
+            const item = state.find(item => item.name === inputItem.payload.name)
+            if (item) {
+                item.quantity += 1;
+            }
+        },
+        DecCart: (state, inputItem) => {
+            const index = state.findIndex(item => item.name === inputItem.payload.name);
+            if (index !== -1) {
+                state[index].quantity -= 1;
+                if (state[index].quantity === 0) {
+                    state.splice(index, 1); // remove the item from the array
+                }
+            }
+        },
+        RemoveFromCart: (state, action) => {
+            return state.filter(item => item.name !== action.payload.name);
+        },
+        ClearCart: () => [],
+
+
     }
-  }
 })
 
-//export
+//export cartSlice  reducers
+export let { AddToCart, IncCart, DecCart, RemoveCart, ClearCart } = cartSlice.actions;
+
+
+
+//create the Order Slice
+let orderSlice = createSlice({
+    name: 'orders',
+    initialState: [],
+    reducers: {
+        OrderDetails: (state, actions) => {
+            const OrderDetails = actions.payload
+            state.push(OrderDetails);
+        }
+    }
+
+})
+
+//export order slice reducrs
 export let { OrderDetails } = orderSlice.actions;
 
-// Configure store
-const Store = configureStore({
-  reducer: {
-    products: ProductsSclice.reducer,
-    cart: CartSlice.reducer,
-    orders: orderSlice.reducer,
-  }
+
+
+//create the User Slice
+let userSlice = createSlice({
+    name: 'users',
+    initialState: {
+        users: [],
+        isAuthenticated: false,
+        currentUser: null
+    },
+    reducers: {
+        registerUser: (state, action) => {
+            state.users.push(action.payload);
+        },
+        logInUser: (state, action) => {
+            const foundUser = state.users.find(
+                user =>
+                    user.username === action.payload.username &&
+                    user.password === action.payload.password
+            );
+            if (foundUser) {
+                state.isAuthenticated = true;
+                state.currentUser = foundUser;
+            } else {
+                alert("Invalid credentials");
+                navigate("/SignIn");
+                
+            }
+        },
+        logOutUser: (state) => {
+            state.isAuthenticated = false;
+            state.currentUser = null;
+        }
+    }
+})
+
+
+//export user slice reducrs
+export let { registerUser, logInUser, logOutUser } = userSlice.actions;
+
+
+
+//configure the store
+const store = configureStore({
+    reducer: {
+        products: productSlice.reducer,
+        cart: cartSlice.reducer,
+        orders: orderSlice.reducer,
+        users: userSlice.reducer
+    }
 });
-export default Store;
+
+// save cart data to local storage
+store.subscribe(() => {
+    const state = store.getState();
+    localStorage.setItem("cart", JSON.stringify(state.cart));
+});
+
+//export the store
+export default store;
