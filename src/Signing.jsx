@@ -16,24 +16,24 @@ function Signing() {
   }
 
   return (
-    <div className="signin-container">
-      <h2 className="signin-title">User Sign In</h2>
-      <form className="signin-form" onSubmit={handleSubmit(myFunc)}>
+    <div className="signing-container">
+      <h2 className="signing-title">User Sign In</h2>
+      <form className="signing-form" onSubmit={handleSubmit(myFunc)}>
         <input
-          className="signin-input"
+          className="signing-input"
           type="text"
           placeholder="Username"
           {...register("username")}
         />
         <input
-          className="signin-input"
+          className="signing-input"
           type="password"
           placeholder="Password"
           {...register("password")}
         />
-        <button className="signin-button" type="submit">Sign In</button>
+        <button className="signing-button" type="submit">Sign In</button>
       </form>
-      <p className="signin-footer">
+      <p className="signing-footer">
         New user?{" "}
         <Link className="signup-link" to="/SignUp">
           Sign Up
@@ -43,4 +43,4 @@ function Signing() {
   );
 }
 
-export default SignIn;
+export default Signing;
