@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
 import React from 'react';
 import './AboutUs.css'; // Import the scoped CSS
 
@@ -21,8 +17,6 @@ function AboutUs() {
           in supporting local farmers and businesses while providing top-notch service to our customers.
         </p>
       </div>
-<<<<<<< HEAD
-=======
 
       <div className="about-section">
         <h2>🤝 Why Choose Us?</h2>
@@ -33,7 +27,6 @@ function AboutUs() {
           <li>✅ Trusted by thousands of happy customers</li>
         </ul>
       </div>
-
       <div className="about-section team-section">
         <h2>👨‍💻 Meet the Team</h2>
         <ul className="team-list">
@@ -41,16 +34,6 @@ function AboutUs() {
           <li className="team-member">Sriram</li>
           <li className="team-member">Sandeep</li>
           <li className="team-member">Nikhil</li>
-        </ul>
->>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
-
-      <div className="about-section">
-        <h2>🤝 Why Choose Us?</h2>
-        <ul>
-          <li>✅ Fresh and organic produce</li>
-          <li>✅ Timely delivery</li>
-          <li>✅ Easy returns and support</li>
-          <li>✅ Trusted by thousands of happy customers</li>
         </ul>
       </div>
     </div>

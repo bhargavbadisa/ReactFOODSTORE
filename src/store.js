@@ -21,17 +21,17 @@ const productSlice = createSlice({
       { name: 'Beetroot', price: 55.00, image: '/VegImages/Beetroot.jpeg' },
       { name: 'Chili', price: 50.00, image: '/VegImages/Chili.jpeg' },
       { name: 'Mushrooms', price: 150.00, image: '/VegImages/Mushrooms.jpeg' },
-      { name: 'Pumpkin', price: 110.00, image: '/VegImages/pumpkin.jpg' },
-      { name: 'Zucchini', price: 65.00, image: '/VegImages/zucchini.jpg' },
-      { name: 'Sweet Corn', price: 95.00, image: '/VegImages/sweet_corn.jpg' },
-      { name: 'Green Beans', price: 85.00, image: '/VegImages/green_beans.jpg' },
-      { name: 'Radish', price: 40.00, image: '/VegImages/radish.jpg' },
-      { name: 'Leeks', price: 60.00, image: '/VegImages/leeks.jpg' },
-      { name: 'Asparagus', price: 130.00, image: '/VegImages/asparagus.jpg' },
-      { name: 'Artichoke', price: 120.00, image: '/VegImages/artichoke.jpg' },
-      { name: 'Fennel', price: 70.00, image: '/VegImages/fennel.jpg' },
-      { name: 'Sweet Potato', price: 90.00, image: '/VegImages/sweet_potato.jpg' },
-      { name: 'Bok Choy', price: 100.00, image: '/VegImages/bok_choy.jpg' }
+      { name: 'Pumpkin', price: 110.00, image: 'https://tse4.mm.bing.net/th/id/OIP.f_1Pjhdmt52DSyE7TAtW6gHaFC?rs=1&pid=ImgDetMain&o=7&rm=3' },
+      { name: 'Zucchini', price: 65.00, image: 'https://thumbs.dreamstime.com/b/fresh-zucchini-vegetables-green-leaves-yellow-flowers-organic-natural-food-isolated-white-background-315224583.jpg' },
+      { name: 'Sweet Corn', price: 95.00, image: 'https://tse2.mm.bing.net/th/id/OIP.L6-YcInKJkjQjXsptoYXyAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3' },
+      { name: 'Green Beans', price: 85.00, image: 'https://static.vecteezy.com/system/resources/previews/030/751/070/non_2x/fresh-green-bean-ai-generative-png.png' },
+      { name: 'Radish', price: 40.00, image: 'https://tse4.mm.bing.net/th/id/OIP.tdLLqYptR0q0k6AHYzT0_gHaE9?rs=1&pid=ImgDetMain&o=7&rm=3' },
+      { name: 'Leeks', price: 60.00, image: 'https://www.kindpng.com/picc/m/329-3293152_garden-leek-hd-png-download.png' },
+      { name: 'Asparagus', price: 130.00, image: 'https://tse2.mm.bing.net/th/id/OIP.pKw0u6AbBmdiPhQzi4AyZwHaHa?pid=ImgDet&w=178&h=178&c=7&dpr=1.5&o=7&rm=3' },
+      { name: 'Artichoke', price: 120.00, image: 'https://pngimg.com/uploads/artichoke/artichoke_PNG26.png' },
+      { name: 'Fennel', price: 70.00, image: 'https://th.bing.com/th/id/OIP.RvhspJCpgABK9hotiyd1VwHaE8?w=286&h=191&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3' },
+      { name: 'Sweet Potato', price: 90.00, image: 'https://img.freepik.com/premium-photo/sweet-potatoes-isolated-white-background_489827-687.jpg' },
+      { name: 'Bok Choy', price: 100.00, image: 'https://static.vecteezy.com/system/resources/previews/045/147/188/non_2x/fresh-bok-choy-isolated-on-transparent-background-png.png' }
     ],
     NonVeg: [
       { name: 'Chicken', price: 220.00, image: '/NonVegImages/Chicken.jpeg' },
@@ -60,7 +60,7 @@ const productSlice = createSlice({
       { name: 'ghee', price: 500.00, image: '/MilkImages/ghee copy.jpeg' },
       { name: 'cream', price: 110.00, image: '/MilkImages/cream copy.jpeg' },
       { name: 'flavored milk', price: 70.00, image: '/MilkImages/flavored milk.jpeg' },
-      { name: 'yogurt', price: 55.00, image: '/MilkImages/yogurt.jpg' },
+      { name: 'yogurt', price: 55.00, image: 'https://th.bing.com/th/id/OIP._HVeiPyHTBQTsMKwa4ibewHaHa?w=191&h=191&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3' },
       { name: 'milk powder', price: 400.00, image: '/MilkImages/milk powder.jpeg' }
     ],
     Chocolates: [
@@ -108,7 +108,7 @@ let cartSlice = createSlice({
                 }
             }
         },
-        RemoveFromCart: (state, action) => {
+        RemoveCart: (state, action) => {
             return state.filter(item => item.name !== action.payload.name);
         },
         ClearCart: () => [],

@@ -1,11 +1,12 @@
 /* Navbar container */
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  background-color: #092120;
+  background-color: #131414ef;
   display: flex;
   align-items: center;
   padding: 10px 15px; /* Reduced padding */

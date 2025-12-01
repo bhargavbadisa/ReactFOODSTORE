@@ -29,13 +29,13 @@ function CartComponent() {
     setCouponCode(codeValue);
 
     switch (codeValue) {
-      case 'SAM123':
+      case 'NANI10':
         setCouponDiscountPercentage(10);
         break;
-      case 'SAM234':
+      case 'NANI20':
         setCouponDiscountPercentage(20);
         break;
-      case 'SAM143':
+      case 'NANI30':
         setCouponDiscountPercentage(30);
         break;
       default:
@@ -199,13 +199,8 @@ const templateParams = {
             {paymentMethod === 'qr' && !paymentSuccessful && (
               <div className="qr-section">
                 <h4>Scan UPI QR to Pay ₹{finalAmount.toFixed(2)}</h4>
-<<<<<<< HEAD
                 <QRCode value={`upi://pay?pa=6281022488-2@ibl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
                 <p>UPI ID:6281022488-2@ibl</p>
-=======
-                <QRCode value={`upi://pay?pa=bhargavbadisha@ybl&pn=MyStore&am=${finalAmount.toFixed(2)}&cu=INR`} />
-                <p>UPI ID: 6281022488-2@ibl</p>
->>>>>>> 3ea0e7df642c85d5b9e8d66662cff9cf87408089
                 <button onClick={handlePaymentSuccess} className="confirm-payment-btn">
                   ✅ I've Completed Payment
                 </button>
@@ -234,7 +229,7 @@ const templateParams = {
       ) : (
         <div>
           <h2>Your cart is Empty! 🛒</h2>
-          <p style={{ textAlign: 'center' }}>Your cart is empty, please add some products...</p>
+          <p>Your cart is empty, please add some products...</p>
         </div>
       )}
     </div>

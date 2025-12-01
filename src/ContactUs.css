@@ -1,0 +1,64 @@
+/* Full Page Center */
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Contact Card */
+.contact-card {
+  width: 380px;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover Lift Effect */
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+/* Title Color */
+.contact-card h2 {
+  color: #0078ff;
+  margin-bottom: 15px;
+}
+
+/* Button */
+.contact-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #0078ff, #00d4ff);
+  border: none;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(135deg, #005fcc, #00a4cc);
+  transform: scale(1.05);
+}
+
+/* Fade In Animation */
+.animate-card {
+  animation: fadeInUp 0.8s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

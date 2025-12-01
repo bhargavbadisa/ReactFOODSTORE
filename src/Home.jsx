@@ -58,7 +58,7 @@ function Home() {
         </section>
 
         <section id="chocolates">
-          <Link to="/chocolates" className="card-link">
+          <Link to="/chocolate" className="card-link">
             <div className="card">
               <img src="/ChocolateImages/Chocolates.png" alt="Chocolates" />
               <h2>Chocolates</h2>

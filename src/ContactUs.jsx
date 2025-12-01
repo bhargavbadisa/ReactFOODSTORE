@@ -1,11 +1,16 @@
 import React from 'react'
+import './ContactUs.css';
 
 function ContactUs() {
   return (
-    <>
-      <h1>This is ContactUs Page</h1>
-      <h2>Contact Number:6281022488</h2>
-    </>
+     <div className="contact-page">
+      <div className="contact-card animate-card">
+        <h2>Contact Us</h2>
+
+        <p>Email: bhargavbadisa6424@example.com</p>
+        <p>Phone: +91 6281022488</p>
+      </div>
+    </div>
   )
 }
 
