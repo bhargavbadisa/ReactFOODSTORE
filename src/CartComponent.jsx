@@ -102,12 +102,10 @@ function CartComponent() {
 
 const templateParams = {
   orderId: orderDetailsObject.orderId,
-  orders: formattedOrders,   // <-- Pass string, NOT array/objects
-  cost: {
-    shipping: shipping.toFixed(2),
-    tax: tax.toFixed(2),
-    total: finalAmount.toFixed(2)
-  },
+  orders: formattedOrders,
+  shipping: shipping.toFixed(2),
+  tax: tax.toFixed(2),
+  total: finalAmount.toFixed(2),
   email: customerEmail
 };
 
